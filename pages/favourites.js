@@ -7,12 +7,14 @@ import ArtworkCard from '@/components/ArtworkCard';
 export default function Favourites(){
     
     const [favourites, setFavourites ] = useAtom(favouritesAtom);
-
+    
     let [ artworkList, setArtworkList ] = useState([]);
 
     useEffect(() => {
         setArtworkList(favourites);
     }, [favourites]);
+
+    if(!favourites) return null;
 
     return(
         <>
