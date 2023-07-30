@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { authenticateUser } from '@/lib/authenticate';
 import { useRouter } from 'next/router';
-import {favouritesAtom} from '../store';
-import {searchHistoryAtom} from '../store';
+import { favouritesAtom } from '../store';
+import { searchHistoryAtom } from '../store';
 
 const [user, setUser] = useState('');
 const [password, setPassword] = useState('');
@@ -11,7 +11,7 @@ const [warning, setWarning] = useState('');
 
 
 const [searchHistory, setSearchHistory ] = useAtom(searchHistoryAtom);
-const [favouritesAtom, setfavouritesAtom ] = useAtom(favouritesAtom);
+const [favourites, setFavourites ] = useAtom(favouritesAtom);
 
 async function updateAtoms() {
     setFavouritesList(await getFavourites()); 
