@@ -2,36 +2,39 @@ import React, { useState } from 'react';
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { authenticateUser } from '@/lib/authenticate';
 import { useRouter } from 'next/router';
-import { favouritesAtom } from '../store';
-import { searchHistoryAtom } from '../store';
-
-const [user, setUser] = useState('');
-const [password, setPassword] = useState('');
-const [warning, setWarning] = useState('');
+import { useAtom} from 'jotai';
+import { favouritesAtom, searchHistoryAtom } from '../store';
 
 
-const [searchHistory, setSearchHistory ] = useAtom(searchHistoryAtom);
-const [favourites, setFavourites ] = useAtom(favouritesAtom);
-
-async function updateAtoms() {
-    setFavouritesList(await getFavourites()); 
-    setSearchHistory(await getHistory());
-}    
-
-const router = useRouter();
-
-async function handleSubmit(e) {
-    e.preventDefault();
-    try {
-        await authenticateUser(user, password);
-        await updateAtoms();
-        router.push('/favourites');
-      } catch (err) {
-        setWarning(err.message);
-      }
-  }
 
 export default function Login(props){
+
+    const [user, setUser] = useState('');
+    const [password, setPassword] = useState('');
+    const [warning, setWarning] = useState('');
+    
+    
+    const [searchHistory, setSearchHistory ] = useAtom(searchHistoryAtom);
+    const [favourites, setFavourites ] = useAtom(favouritesAtom);
+    
+    async function updateAtoms() {
+        setFavouritesList(await getFavourites()); 
+        setSearchHistory(await getHistory());
+    }    
+    
+    const router = useRouter();
+    
+    async function handleSubmit(e) {
+        e.preventDefault();
+        try {
+            await authenticateUser(user, password);
+            await updateAtoms();
+            router.push('/favourites');
+          } catch (err) {
+            setWarning(err.message);
+          }
+      }
+
   return (
     <>
       <Card bg="light">
