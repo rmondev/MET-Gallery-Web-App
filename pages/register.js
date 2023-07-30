@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 
 
-export default function Login(props){
+export default function Register(props){
 
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
@@ -29,7 +29,7 @@ export default function Login(props){
   return (
     <>
       <Card bg="light">
-        <Card.Body><h2>Register</h2>Register for an account: { warning && ( <><br /><Alert variant="danger">{warning}</Alert></> )}</Card.Body>
+        <Card.Body><h2>Register</h2>Register for a New Account: { warning && ( <><br /><Alert variant="danger">{warning}</Alert></> )}</Card.Body>
       </Card>
       <br />
       <Form onSubmit={handleSubmit}>
@@ -49,4 +49,4 @@ export default function Login(props){
       </Form>
     </>
   );
-}i
+}
