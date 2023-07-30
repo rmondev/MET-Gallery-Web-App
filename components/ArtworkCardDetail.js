@@ -18,7 +18,7 @@ export default function ArtworkCardDetail(props){
     const [ showAdded, setShowAdded ] = useState(false);
 
     useEffect(()=>{
-        setShowAdded(favourites?.includes(objectID))
+        setShowAdded(favourites?.includes(props.objectID))
     }, [favourites])
     
 
