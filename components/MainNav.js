@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useAtom } from 'jotai';
 import { searchHistoryAtom } from '../store';
+import { addToHistory } from '@/lib/userData';
 
 
 
@@ -23,7 +24,8 @@ function MainNav() {
       setSearchQueryRoute('');
 
       let queryString = `title=true&q=${searchQueryRoute}`;
-      setSearchHistory(searchHistory => [...searchHistory, queryString]);
+      
+      setSearchHistory(await addToHistory(queryString)) 
      
     }
     const handleToggle = () => {
