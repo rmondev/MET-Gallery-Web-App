@@ -19,7 +19,7 @@ export default function ArtworkCardDetail(props){
 
     useEffect(()=>{
         setShowAdded(favourites?.includes(props.objectID))
-    }, [favourites])
+    }, [favourites, props.objectID])
     
 
     // 'props.objectID' used for MET API call (SWR)
