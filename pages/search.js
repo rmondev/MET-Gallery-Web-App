@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Form, Col, Row, Button } from 'react-bootstrap';
 import { useAtom } from 'jotai';
 import { searchHistoryAtom } from '../store';
+import { addToHistory } from '@/lib/userData';
 
 
 export default function Search(){
@@ -42,7 +43,7 @@ export default function Search(){
     
       let queryString = '';
     
-      const submitForm = (data) => {
+      const submitForm = async(data) => {
         queryString = `${data.searchBy}=true`;
         if (data.geoLocation != null || data.geoLocation != undefined){queryString += `&geoLocation=${data.geoLocation}`};
         if (data.medium != null || data.medium != undefined){queryString += `&medium=${data.medium}`};
@@ -52,7 +53,7 @@ export default function Search(){
         queryString += `&q=${data.q}`;
 
         router.push(`/artwork?${queryString}`)
-        setSearchHistory(current => [...current, queryString]);
+        setSearchHistory(await addToHistory(queryString));
       };
 
     return(
