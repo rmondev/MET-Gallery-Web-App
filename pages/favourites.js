@@ -31,7 +31,6 @@ export default function Favourites(){
             <Card>
                 <Card.Body>
                 <h4>Nothing Here</h4>
-                <p>Try searching for something else.</p>
                 </Card.Body>
             </Card>
             )}
