@@ -2,7 +2,7 @@ import React from 'react'
 import { useAtom } from 'jotai'
 import { Row, Col } from 'react-bootstrap'
 import ArtworkCard from '@/components/ArtworkCard'
-import { favouritesAtom } from '..store/store'
+import { favouritesAtom } from '../store'
 import { Card } from 'react-bootstrap'
 
 export default function Favourites() {
