@@ -30,7 +30,7 @@ export default function Favourites() {
                 )}
             </Row>
         </>
-      ) : null}
+      ):null}
     </div>
   )
 }

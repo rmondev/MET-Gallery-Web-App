@@ -12,8 +12,8 @@ const PUBLIC_PATHS = ['/login', '/', '/_error', '/register'];
 
 export default function RouteGuard(props) {
     const router = useRouter();
+    
     const [authorized, setAuthorized] = useState(false);
-
     const [searchHistory, setSearchHistory ] = useAtom(searchHistoryAtom);
     const [ favouritesList, setFavouritesList ] = useAtom(favouritesAtom);
 
@@ -36,7 +36,7 @@ export default function RouteGuard(props) {
             router.events.off('routeChangeComplete', authCheck);
         }
 
-    }, []);
+    });
 
     function authCheck(url) {
         // redirect to login page if accessing a private page and not logged in 
@@ -50,8 +50,8 @@ export default function RouteGuard(props) {
     }
 
     return (
-      <>
-        {authorized && props.children}
-      </>
+        <>
+            {authorized && props.children}
+        </>
     )
 }
