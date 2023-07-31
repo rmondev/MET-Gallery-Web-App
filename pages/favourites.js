@@ -1,43 +1,36 @@
-import { React, useState, useEffect} from 'react';
-import { useAtom } from 'jotai';
-import { favouritesAtom } from '../store';
-import { Container, Col, Row, Card} from 'react-bootstrap';
-import ArtworkCard from '@/components/ArtworkCard';
+import React from 'react'
+import { useAtom } from 'jotai'
+import { Row, Col } from 'react-bootstrap'
+import ArtworkCard from '@/components/ArtworkCard'
+import { favouritesAtom } from '..store/store'
+import { Card } from 'react-bootstrap'
 
-export default function Favourites(){
-    
-    const [favourites, setFavourites ] = useAtom(favouritesAtom);
-    
-    let [ artworkList, setArtworkList ] = useState([]);
+export default function Favourites() {
+  const [ favouritesList, setFavouritesList ] = useAtom(favouritesAtom, [])
+  
+  if(!favouritesList) return null;
 
-    useEffect(() => {
-        setArtworkList(favourites);
-    }, [favourites]);
-
-    if(!favourites) return null;
-
-    return(
+  return (
+    <div className='container'>
+      {favouritesList ? (
         <>
-        <Container>
-        {artworkList.length > 0 ? (
-            <>
-                <Row className="gy-4">
-                    {artworkList.map((currentObjectID) => (
+            <Row className='gy-4'>
+                {favouritesList?.length > 0 ? (
+                    favouritesList?.map((currentObjectID) => (
                         <Col lg={3} key={currentObjectID}>
-                            <ArtworkCard objectID={currentObjectID} />
+                                <ArtworkCard objectID={currentObjectID} />
                         </Col>
-                    ))}
-                </Row>
-            </>
-            ) : (
-            <Card>
-                <Card.Body>
-                <h4>Nothing Here</h4>
-                </Card.Body>
-            </Card>
-            )}
-        </Container>
-    </>
-
-    );
+                    ))
+                ) : (
+                    <Card>
+                        <Card.Body>
+                            <h4>Nothing Here</h4>
+                        </Card.Body>
+                    </Card>
+                )}
+            </Row>
+        </>
+      ) : null}
+    </div>
+  )
 }
