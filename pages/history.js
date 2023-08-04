@@ -8,8 +8,8 @@ import { removeFromHistory } from '@/lib/userData';
 
 export default function SearchHistory() {
   const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
-
   const router = useRouter();
+  
   if(!searchHistory) return null;
 
   let parsedHistory = [];

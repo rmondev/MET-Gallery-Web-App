@@ -4,7 +4,6 @@ import Error from 'next/error';
 import {Card, Button} from 'react-bootstrap';
 import Link from 'next/link';
 
-
 export default function ArtworkCard(props){
     
     // 'props.objectID' used for MET API call (SWR)

@@ -8,20 +8,15 @@ import { favouritesAtom } from '../store';
 import { addToFavourites } from '@/lib/userData';
 import { removeFromFavourites } from '@/lib/userData';
 
-
-
 export default function ArtworkCardDetail(props){
 
-   
     const [ favourites, setFavourites ] = useAtom(favouritesAtom);
-    
     const [ showAdded, setShowAdded ] = useState(false);
 
     useEffect(()=>{
         setShowAdded(favourites?.includes(props.objectID))
     }, [favourites, props.objectID])
     
-
     // 'props.objectID' used for MET API call (SWR)
     const { data, error } = useSwr(props.objectID ? `https://collectionapi.metmuseum.org/public/collection/v1/objects/${props.objectID}` : null);
 
@@ -30,11 +25,9 @@ export default function ArtworkCardDetail(props){
         if (showAdded) {
             setFavourites(await removeFromFavourites(props.objectID));
             
-
         // If the "showAdded" value in the state is false, then we must add the objectID (passed in "props") to the "favouritesList"
         } else {
             setFavourites(await addToFavourites(props.objectID));
-            
         }
     }
 
@@ -86,8 +79,5 @@ export default function ArtworkCardDetail(props){
             </Card>
             </>
         )
-
     }
-
-    
 }

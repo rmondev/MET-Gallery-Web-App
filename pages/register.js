@@ -3,9 +3,6 @@ import { Card, Form, Button, Alert } from "react-bootstrap";
 import { registerUser } from '@/lib/authenticate';
 import { useRouter } from 'next/router';
 
-
-
-
 export default function Register(props){
 
     const [user, setUser] = useState('');
@@ -13,7 +10,6 @@ export default function Register(props){
     const [warning, setWarning] = useState('');
     const [password2, setPassword2] = useState('');
      
-    
     const router = useRouter();
     
     async function handleSubmit(e) {

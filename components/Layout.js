@@ -2,12 +2,9 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import MainNav from '@/components/MainNav'
 
-
 export default function Layout(props) {
     return (
         <>
-
-        
         <MainNav />
             <Container>
             <br />
@@ -15,9 +12,6 @@ export default function Layout(props) {
             <br />
             </Container>
             <br />
-        
-        
-        
         </>
     )
 }

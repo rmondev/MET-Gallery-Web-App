@@ -6,14 +6,11 @@ import { useAtom} from 'jotai';
 import { favouritesAtom, searchHistoryAtom } from '../store';
 import { getHistory, getFavourites } from "@/lib/userData";
 
-
-
 export default function Login(props){
 
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
     const [warning, setWarning] = useState('');
-    
     
     const [searchHistory, setSearchHistory ] = useAtom(searchHistoryAtom);
     const [favouritesList, setFavouritesList ] = useAtom(favouritesAtom);
@@ -53,7 +50,6 @@ export default function Login(props){
         <br />
         <div><Button variant="primary" className="pull-right" type="submit">Login </Button>{ warning && ( <><br /><br /><Alert variant="danger">{warning}</Alert></> )}</div>
         <br />
-        
       </Form>
     </>
   );

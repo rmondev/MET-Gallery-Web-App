@@ -1,11 +1,11 @@
 /*********************************************************************************
-*  WEB422 – Assignment 5
+*  WEB422 – Assignment 6
 *  I declare that this assignment is my own work in accordance with Seneca Academic Policy.  
 *  No part of this assignment has been copied manually or electronically from any other source
 *  (including web sites) or distributed to other students.
 * 
-*  Name: Riccardo Moncada Student ID: 129698213 Date: July 19, 2023
-*  Netlify Link: https://jovial-peony-7316ad.netlify.app/
+*  Name: Riccardo Moncada Student ID: 129698213 Date: August 4, 2023
+*  Netlify Link: https://wondrous-froyo-b80e92.netlify.app/
 *
 ********************************************************************************/ 
 import React from 'react';
