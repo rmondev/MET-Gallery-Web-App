@@ -39,7 +39,7 @@ export default function Login(props){
   return (
     <>
       <Card bg="light">
-        <Card.Body><h2>Login</h2>Enter your login information below: { warning && ( <><br /><Alert variant="danger">{warning}</Alert></> )}</Card.Body>
+        <Card.Body><h2>Login</h2>Enter your login information below: </Card.Body>
       </Card>
       <br />
       <Form onSubmit={handleSubmit}>
@@ -51,7 +51,9 @@ export default function Login(props){
           <Form.Label>Password:</Form.Label><Form.Control type="password" value={password} id="password" name="password" onChange={e => setPassword(e.target.value)}/>
         </Form.Group>
         <br />
-        <Button variant="primary" className="pull-right" type="submit">Login</Button>
+        <div><Button variant="primary" className="pull-right" type="submit">Login </Button>{ warning && ( <><br /><br /><Alert variant="danger">{warning}</Alert></> )}</div>
+        <br />
+        
       </Form>
     </>
   );
