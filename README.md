@@ -5,7 +5,7 @@ The Met Artwork App is an interactive web application that allows users to explo
 
 
 <p align="center">
-  <img src="/screenshots/home_screen.png" alt="home_screen" style="width:85%;">
+  <img src="/screenshots/home_screen.png" alt="home_screen" style="width:100%;">
 </p>
 
 
