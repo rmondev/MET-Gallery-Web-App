@@ -1,4 +1,4 @@
-# Met Artwork App
+# Met Gallery Web App
 
 ## Overview
 The Met Artwork App is an interactive web application that allows users to explore and engage with the Metropolitan Museum of Art's collection. This app supports functionality for searching, viewing detailed information, managing favorites, and tracking search history using the Museum's public API.
